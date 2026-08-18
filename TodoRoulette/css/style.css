@@ -1,0 +1,121 @@
+@charset "utf-8";
+
+.fadingElement {
+  transition:
+    opacity 1.5s,
+    visibility 1.5s;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.display-none {
+  display: none;
+}
+.display-flex {
+  display: flex;
+  flex-direction: column; /*要素を縦並べにする*/
+  align-items: center; /*左右中央寄せ*/
+}
+
+#buttons {
+  width: 60%;
+  height: 35%;
+  flex-shrink: 0; /*要素の縮小を禁止する*/
+  display: flex;
+  flex-direction: column; /*要素を縦並べにする*/
+}
+
+#header {
+  font-size: 170%;
+}
+
+.btn {
+  display: block;
+  margin: 5px auto;
+  width: 50%;
+  font-size: 170%;
+  padding: 10px 0px;
+}
+
+.resultText {
+  font-size: 170%;
+  margin: 10px;
+  text-align: center;
+}
+
+#resultText2 {
+  font-size: 280%;
+}
+
+#resultTexts {
+  background: rgb(255, 255, 255);
+  margin-bottom: 10px;
+}
+
+body {
+  background: rgb(79, 161, 255);
+}
+
+#container {
+  position: relative; /* 重ね合わせの基準にする */
+  height: auto;
+}
+
+#formPage,
+#hiddenPage {
+  width: 50%;
+  padding: 2%;
+}
+
+#formPage > * {
+  width: 50%;
+  display: flex;
+  flex-direction: column; /*要素を縦並べにする*/
+  align-items: center; /*左右中央寄せ*/
+}
+
+#hiddenPage > :not(#rouletteArea) {
+  width: 50%;
+}
+
+#hiddenPage {
+  position: absolute;
+  z-index: 30;
+  pointer-events: none; /*非表示中はクリックできないようにする*/
+}
+
+#blackoutCover {
+  position: fixed; /* ブラウザの定位置に固定 */
+  background: rgba(0, 0, 0, 0.75); /* 背景色を半透明の黒色に */
+  width: 100%; /* 要素の横幅を画面全体に */
+  height: 100%; /* 要素の高さを画面全体に */
+  top: 0; /* 要素の固定位置をブラウザ最上部に合わせる */
+  left: 0; /* 要素の固定位置をブラウザ左側に合わせる */
+  z-index: 20; /* 要素をコンテンツより前面に*/
+}
+
+#rouletteArea {
+  width: 75%;
+}
+
+#ulTodoList {
+  list-style: none; /*中黒消去*/
+  padding-left: 0px; /*中黒分の余白消去*/
+}
+
+#ulTodoList li input {
+  height: 50px;
+  width: 300px;
+  margin: 10px;
+  text-align: center; /*テキストボックス内の文字は中央寄せ*/
+  font-size: 150%;
+}
